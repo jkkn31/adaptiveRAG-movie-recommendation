@@ -6,20 +6,16 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.prompts import ChatPromptTemplate
 from langchain.chains import create_retrieval_chain
-from langchain_community.knowledgeBasetores import FAISS
-from langchain_community.document_loaders import PyPDFDirectoryLoader
+from langchain_community.vectorstores import FAISS
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
-# from dotenv import load_dotenv
-# from langchain_community.document_loaders import PyJSONLoader
 from langchain_community.document_loaders import JSONLoader
 from pathlib import Path
 from dotenv import load_dotenv
-from langchain_community.document_loaders import PyPDFDirectoryLoader
 
 load_dotenv()
 
 
-file_path = 'data.json'
+file_path = 'movie-metadata.json'
 
 # Load the GROQ and OpenAI API keys from env/secrets
 groq_api_key = os.getenv('GROQ_API_KEY')
