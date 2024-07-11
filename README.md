@@ -1,1 +1,1 @@
-# adaptiveRAG-music-recommendation
+# adaptiveRAG-movie-recommendation
