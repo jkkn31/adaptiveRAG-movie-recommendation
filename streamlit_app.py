@@ -15,7 +15,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-file_path = 'movie-metadata.json'
+file_path = 'data/movie-metadata.json'
 
 # Load the GROQ and OpenAI API keys from env/secrets
 groq_api_key = os.getenv('GROQ_API_KEY')
