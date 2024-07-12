@@ -74,8 +74,7 @@ if user_query := st.chat_input("I am Personalized Movie Recommender, How can I h
             prompt = ChatPromptTemplate.from_template(
                 """
                 Answer the questions based on the provided context only.
-                Please provide the response based on the question and the response should be a maximum of 3 if user dont ask for any number of responses.
-                The output response show them as bullet points with little more reasoning about the response based on the provided context only, if the user question is not available in our database, please say that the requested information is not available, please try again.
+                Please provide the response based on the question and the response should be a maximum of 3 if user dont ask for any number of response and the response show them as bullet points with little more reasoning or context about the response based on the provided context only, if the user question is not available in our database, please say that the requested information is not available, please try again.
                 
                 Handle typos and variations in questions asked.
                 <context>
