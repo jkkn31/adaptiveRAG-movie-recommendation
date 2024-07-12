@@ -74,12 +74,10 @@ if user_query := st.chat_input("I am Personalized Movie Recommender, How can I h
             prompt = ChatPromptTemplate.from_template(
                 """
                 Answer the questions based on the provided context only.
-                Please provide the response based on the question and the response should be a maximum of 3 if user dont ask for any number of response and the response show them as bullet points in new line with little more reasoning or context about the response based on the provided context only, if the user question is not available in our database, please say that the requested information is not available, please try again.
-                
-                Handle typos and variations in questions asked.                
-                
-                Make sure the response is readable and organized.
-                
+                Please provide a maximum of 3 responses based on the question asked and Make sure each response is readable and organized with little more reasoning or context, if the user question is not available in our database, please say that the requested information is not available, please try again.
+
+                Handle typos and variations in questions asked.   
+
                 <context>
                 {context}
                 <context>
@@ -97,7 +95,7 @@ if user_query := st.chat_input("I am Personalized Movie Recommender, How can I h
             st.subheader('Top Recommendations for your query:\n')
 
             st.write("")
-            st.write(response['answer'])
+            st.markdown(response['answer'])
 
 
 
