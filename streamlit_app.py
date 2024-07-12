@@ -59,7 +59,7 @@ final_documents = text_splitter.split_documents(docs)
 
 ### Load the vector store using gemini embeddings on the loaded text
 knowledgeBase = FAISS.from_documents(final_documents, embeddings)
-knowledgeBase.save_local("faiss_index")
+# knowledgeBase.save_local("faiss_index")
 
 # ------------------------------------------- Output --------------------------------------------------------------
 
@@ -88,7 +88,7 @@ if user_query := st.chat_input("I am Personalized Movie Recommender, How can I h
 
             # document chain - stuff doc chain to pass the prompts along with model
             documents_chain = create_stuff_documents_chain(llm_model, prompt)
-            knowledgeBase = FAISS.load_local("faiss_index", embeddings)
+            # knowledgeBase = FAISS.load_local("faiss_index", embeddings)
             kg_retriever = knowledgeBase.as_retriever()
             retrieval_chain = create_retrieval_chain(kg_retriever, documents_chain)
 
