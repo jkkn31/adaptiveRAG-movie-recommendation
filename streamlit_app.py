@@ -30,12 +30,12 @@ st.set_page_config(  # Alternate names: setup_page, page, layout
     page_icon=None,  # String, anything supported by st.image, or None.
 )
 
-st.title('Personalized Movie Recommendations using Advanced RAG Techniques')
+st.title('Personalized Movie Recommendations using Advanced RAG Techniques :robot_face:')
 
-col1, col2, col3 = st.columns([0.5,2,0.5])
-with col2:
-    st.header("Personalized Movie Recommendations using RAG :robot_face:")
-    st.markdown("")
+# col1, col2, col3 = st.columns([0.5,2,0.5])
+# with col2:
+#     st.header("Personalized Movie Recommendations using RAG :robot_face:")
+#     st.markdown("")
 
 # Initialize the llm_model model - Llama3 and gemini embedding model
 llm_model = ChatGroq(groq_api_key=groq_api_key, model_name="Llama3-8b-8192")
@@ -75,7 +75,7 @@ if user_query := st.chat_input("I am Personalized Movie Recommender, How can I h
                 """
                 Answer the questions based on the provided context only.
                 Please provide the response based on the question and the response should be a maximum of 3 if user dont ask for any number of responses.
-                The output response show them as bullet points with little more reasoning about the response based on the provided context only.
+                The output response show them as bullet points with little more reasoning about the response based on the provided context only, if the user question is not available in the provided context, please say that the requested information is not available, please try again.
                 
                 Handle typos and variations in questions asked.
                 <context>
@@ -95,7 +95,7 @@ if user_query := st.chat_input("I am Personalized Movie Recommender, How can I h
             st.subheader('Top Recommendations for your query:\n')
 
             st.write("")
-            st.markdown(response['answer'])
+            st.write(response['answer'])
 
 
 
