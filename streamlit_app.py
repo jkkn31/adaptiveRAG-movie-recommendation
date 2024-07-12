@@ -75,7 +75,8 @@ if user_query := st.chat_input("I am Personalized Movie Recommender, How can I h
                 """
                 Answer the questions based on the provided context only.
                 Please provide the response based on the question and the response should be a maximum of 3 if user dont ask for any number of responses.
-
+                The output response show them as bullet points with little more reasoning about the response based on the provided context only.
+                
                 Handle typos and variations in questions asked.
                 <context>
                 {context}
